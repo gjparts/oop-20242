@@ -9,4 +9,11 @@ public class Persona {
     public String nombre;
     public int edad;
     public char genero;
+    //constructores
+    public Persona(){
+        //inicializar los atributos con valores predeterminados
+        this.nombre = "No Tiene";
+        this.edad = 0;
+        this.genero = 'X';
+    }
 }
