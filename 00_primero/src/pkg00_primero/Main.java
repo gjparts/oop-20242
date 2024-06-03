@@ -42,6 +42,10 @@ public class Main {
         System.out.println( "Color: "+c1.color );
         System.out.println( "Año: "+c1.anio );
         
+        Producto pr1 = new Producto("ABC01", "Coca Cola 3L", 55);
+        Producto pr2 = new Producto("XYZ01", "Cheetos Pequeño","Frito Lay",true,10);
+        pr1.imprimir();
+        pr2.imprimir();
     }
     
 }
