@@ -46,6 +46,13 @@ public class Main {
         Producto pr2 = new Producto("XYZ01", "Cheetos Pequeño","Frito Lay",true,10);
         pr1.imprimir();
         pr2.imprimir();
+        
+        pe1.imprimir();
+        pe2.imprimir();
+        pe3.imprimir();
+        pe4.imprimir();
+        System.out.println("*****************************************");
+        System.out.println("p1: mayor de edad:"+pe1.esMayorDeEdad());
     }
     
 }
