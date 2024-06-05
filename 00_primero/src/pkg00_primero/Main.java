@@ -53,6 +53,10 @@ public class Main {
         pe4.imprimir();
         System.out.println("*****************************************");
         System.out.println("p1: mayor de edad:"+pe1.esMayorDeEdad());
+        
+        Empleado em1 = new Empleado("Gerardo", 42, 'M', 10000, 'T');
+        em1.setEdad(90);
+        System.out.println("la edad de em1 es: "+em1.getEdad());
     }
     
 }
