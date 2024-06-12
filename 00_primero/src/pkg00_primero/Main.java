@@ -54,9 +54,20 @@ public class Main {
         System.out.println("*****************************************");
         System.out.println("p1: mayor de edad:"+pe1.esMayorDeEdad());
         
-        Empleado em1 = new Empleado("Gerardo", 42, 'M', 10000, 'T');
+        Empleado em1 = new Empleado("Gerardo", 42, 'X', 10000, 'T');
         em1.setEdad(90);
         System.out.println("la edad de em1 es: "+em1.getEdad());
+        em1.setGenero('M');
+        System.out.println("el genero de em1 es: "+em1.getGenero());
+        System.out.println("el genero de em1 es: "+em1.getGeneroDescripcion());
+        
+        em1.setSalario(15000);
+        System.out.println("el salario de em1 es: "+em1.getSalario());
+        
+        em1.setContrato('P');
+        System.out.println("el contrato de em1 es: "+em1.getContrato());
+        System.out.println("el contrato de em1 es: "+em1.getContratoDescripcion());
+        
     }
     
 }
