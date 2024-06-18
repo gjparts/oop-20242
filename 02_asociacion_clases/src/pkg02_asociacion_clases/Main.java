@@ -15,7 +15,27 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Operador tigo = new Operador("TIGO","Honduras");
+        Operador claro = new Operador("Claro C.A.","Honduras");
+        
+        Fabricante samsung = new Fabricante("SAMSUNG", "Korea", "No se");
+        Fabricante apple = new Fabricante("Apple", "USA", "Tim Cook");
+        Fabricante huawei = new Fabricante("Huawei Int.", "China", "");
+        
+        Bateria bat1 = new Bateria(samsung,6500);
+        Bateria bat2 = new Bateria(huawei,4500);
+        //se puede crear un objeto para asignarlo a un atributo
+        //solo en el momento que lo va a necesitar
+        //IMPORTANTE: haga esto siemore y cuando no necesite reutilizar dicho objeto.
+        Bateria bat3 = new Bateria( new Fabricante("LG","Korea",""), 6000 );
+        Bateria bat4 = new Bateria(samsung,3500);
+        Bateria bat5 = new Bateria(huawei,9000);
+        
+        Chip sim1 = new Chip(tigo, 99152959);
+        Chip sim2 = new Chip(tigo, 12341234);
+        Chip sim3 = new Chip(claro, 33223322);
+        Chip sim4 = new Chip( new Operador("AT&T","USA") , 1234567897);
+        
     }
     
 }
