@@ -52,7 +52,31 @@ public class SmartPhone {
         return this.bateria;
     }
     public void imprimir(){
+        //como marca y bateria desde el constructor me aseguro
+        //que no pueda ser null; entonces es imposible que a este
+        //punto sea null alguno de los dos.
         System.out.println("******** SmartPhone ********");
-        System.out.println("Fabricante: ");
+        System.out.println("Fabricante: "+this.marca.nombre);
+        System.out.println("Modelo: "+this.modelo);
+        System.out.println("Almacenamiento: "+this.almacenamiento+" GB");
+        System.out.println("RAM: "+this.ram+" GB");
+        System.out.println("Bateria: ");
+        System.out.println("\tMarca: "+this.bateria.getMarca().nombre);
+        System.out.println("\tMiliAmperios: "+this.bateria.miliamperios);
+        //imprimir los sim card
+        //de acuerdo a como esta hecha la clase SmartPhone tanto
+        //chip1 como chip2 pueden llegar a venir con null
+        //lo correcto es que si alguno de ellos es null entonces
+        //mejor no tratar de obtener informacion sobre ello.
+        if( this.chip1 != null ){
+            System.out.println("Chip 1:");
+            System.out.println("\tOperador: "+this.chip1.getProveedor().nombre);
+            System.out.println("\tNumero: "+this.chip1.numeroTelefonico);
+        }
+        if( this.chip2 != null ){
+            System.out.println("Chip 2:");
+            System.out.println("\tOperador: "+this.chip2.getProveedor().nombre);
+            System.out.println("\tNumero: "+this.chip2.numeroTelefonico);
+        }
     }
 }

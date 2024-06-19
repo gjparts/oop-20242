@@ -36,6 +36,8 @@ public class Main {
         Chip sim3 = new Chip(claro, 33223322);
         Chip sim4 = new Chip( new Operador("AT&T","USA") , 1234567897);
         
+        SmartPhone sm1 = new SmartPhone(samsung, "S90", 1024, 16, bat5, sim1, null);
+        sm1.imprimir();
     }
     
 }
