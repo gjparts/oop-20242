@@ -13,13 +13,13 @@ public class Barrio {
     //atributos
     public String nombre;
     public String pais;
-    public String municipio;
+    public String departamento;
     public String ciudad;
     //constructores
     public Barrio(String nombre, String pais, String municipio, String ciudad) {
         this.nombre = nombre;
         this.pais = pais;
-        this.municipio = municipio;
+        this.departamento = municipio;
         this.ciudad = ciudad;
     }
 }

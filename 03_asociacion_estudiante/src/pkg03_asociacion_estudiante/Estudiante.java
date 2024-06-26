@@ -62,11 +62,18 @@ public class Estudiante {
         //no podrá ser null por lo que no es tan necesario validarlo
         System.out.println("\tBarrio: "+this.direccion.getBarrio().nombre);
         System.out.println("\tCiudad: "+this.direccion.getBarrio().ciudad);
-        System.out.println("\tMunicipio: "+this.direccion.getBarrio().municipio);
+        System.out.println("\tMunicipio: "+this.direccion.getBarrio().departamento);
         System.out.println("\tPais: "+this.direccion.getBarrio().pais);
         //el trabajo si tiene el peligro de venir null, debemos validarlo antes de leerlo
         if( this.trabajo != null ){
             //imprimir toda la informacion del trabajo del Estudiante
+            System.out.println("Datos Laborales:");
+            System.out.println("\tEmpresa/Negocio: "+this.trabajo.getEmpresa().nombre);
+            System.out.println("\tDescripcion del cargo: "+this.trabajo.descripcion);
+            System.out.println("\tJornada: "+this.trabajo.getJornadaDescripcion());
+            System.out.println("\tSalario: "+this.trabajo.getSalario());
+            System.out.println("\tCiudad: "+this.trabajo.getEmpresa().getDireccion().getBarrio().ciudad);
+            System.out.println("\tRubro: "+this.trabajo.getEmpresa().rubro);
         }
     }
 }

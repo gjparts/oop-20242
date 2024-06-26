@@ -50,7 +50,20 @@ public class Cargo {
     public char getJornada() {
         return this.jornada;
     }
+    public String getJornadaDescripcion(){
+        //en una estructura switch si usa return ya no es necesario poner break en cada caso
+        switch(this.jornada){
+            case 'M': return "Mañana";
+            case 'T': return "Tarde";
+            case 'N': return "Noche";
+            default: return "No valido";
+        }
+    }
     public float getSalario() {
         return this.salario;
     }
+    public Empresa getEmpresa() {
+        return this.empresa;
+    }
+    
 }
