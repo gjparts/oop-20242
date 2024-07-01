@@ -1,4 +1,4 @@
-package pkg05_asociacion_factura;
+package pkg06_asociacion_factura_multiplicidad;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.text.DecimalFormat;
@@ -7,36 +7,25 @@ public class Factura {
     public int numero;
     public Calendar fecha;
     public Cliente cliente;
-    private Producto producto1;
-    public Producto producto2;
-    public Producto producto3;
-    public Producto producto4;
+    private Producto[] productos; //multiplicidad: coleccion de elementos repetitivos
     //constructor
-    public Factura(int numero, Calendar fecha, Cliente cliente, Producto producto1) {
+    public Factura(int numero, Calendar fecha, Cliente cliente, Producto[] productos) {
         this.numero = numero;
         this.fecha = fecha;
         this.cliente = cliente;
-        this.setProducto1(producto1);
+        //al menos debe haber un elemento en productos y el primer elemento no puede ser null
+        if( productos == null )
+            throw new IllegalArgumentException("Factura: arreglo productos no debe ser null.");
+        else
+            if( productos.length == 0 )
+                throw new IllegalArgumentException("Factura: arreglo productos debe tener al menos 1 elemento.");
+            else
+                if( productos[0] == null )
+                    throw new IllegalArgumentException("Factura: arreglo productos primer elemento no puede ser null");
+                else
+                    this.productos = productos; //se acepta
     }
     //metodos
-    public void setProducto1(Producto producto) {
-        if( producto != null )
-            this.producto1 = producto; //se acepta
-        else
-            throw new IllegalArgumentException("Factura: producto1 es obligatorio");
-    }
-    public Producto getProducto1() {
-        return this.producto1;
-    }
-    public Producto getProducto2() {
-        return this.producto2;
-    }
-    public Producto getProducto3() {
-        return this.producto3;
-    }
-    public Producto getProducto4() {
-        return this.producto4;
-    }
     public void imprimir(){
         System.out.println("*** Factura ***");
         System.out.println("Numero: "+this.numero);

@@ -1,4 +1,4 @@
-package pkg05_asociacion_factura;
+package pkg06_asociacion_factura_multiplicidad;
 public class Cliente {
     //atributos
     public String nombre;

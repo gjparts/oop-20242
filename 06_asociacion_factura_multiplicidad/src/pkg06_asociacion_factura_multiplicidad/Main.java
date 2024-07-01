@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg05_asociacion_factura;
+package pkg06_asociacion_factura_multiplicidad;
 
 import java.util.Calendar;
 
