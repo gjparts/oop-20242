@@ -28,12 +28,24 @@ public class Main {
         Producto botana1 = new Producto("Churro",pc2,8);
         Producto hielo = new Producto("Hielo",pc1,20);
         
-        Factura f1 = new Factura(1, fecha1, cli1, cocacola);
-        f1.producto2 = cocacola;
-        f1.producto3 = botana1;
-        f1.producto4 = hielo;
-        
+        //arreglo de productos para f1
+        Producto arr1[] = {botana1, cocacola, botana1, botana1, botana1, cocacola};
+        Factura f1 = new Factura(1, fecha1, cli1, arr1);
         f1.imprimir();
+        //en f2, la fecha a usar es la del PC, no tiene cliente identificado y
+        //los productos son un arreglo creado en el momento de la instanciacion
+        Factura f2 = new Factura(2, Calendar.getInstance(),null, new Producto[]{ hielo, cocacola } );
+        f2.imprimir();
+        
+        //acceder a determinado elemento de una coleccion dentro de una clase
+        System.out.println("El tercer producto de f1 es "+f1.getProductos()[2].nombre);
+        
+        /*
+        //hacer private una coleccion no protege a sus elementos hijos
+        Producto arr2[] = f1.getProductos();
+        arr2[0] = null;
+        f1.imprimir();
+        */
     }
     
 }

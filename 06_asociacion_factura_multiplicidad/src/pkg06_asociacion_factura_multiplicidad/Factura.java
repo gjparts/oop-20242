@@ -47,33 +47,27 @@ public class Factura {
         }
         System.out.println("producto\tprecio");
         float subtotal = 0.00f;
-        //por como esta diseñada la clase, producto1 no puede venir null asi que
-        //no es necesario validarlo
-        System.out.print(this.producto1.nombre+"\t");
-        System.out.println(this.producto1.precioVenta);
-        subtotal += producto1.precioVenta;
-        //producto2 a producto4 tiene probabilidad de venir null, se validan:
-        if( this.producto2 != null ){
-            System.out.print(this.producto2.nombre+"\t");
-            System.out.println(this.producto2.precioVenta);
-            subtotal += producto2.precioVenta;
+        //por como esta diseñada la clase, productos no puede venir null asi que
+        //no es necesario validar
+        //recorro la coleccion productos, si encuentro un
+        //elemento null lo ignoro
+        for( int i = 0; i < productos.length; i++ ){
+            if( this.productos[i] != null ){
+                System.out.print(this.productos[i].nombre+"\t");
+                System.out.println(this.productos[i].precioVenta);
+                subtotal += productos[i].precioVenta;
+            }
         }
-        if( this.producto3 != null ){
-            System.out.print(this.producto3.nombre+"\t");
-            System.out.println(this.producto3.precioVenta);
-            subtotal += producto3.precioVenta;
-        }
-        if( this.producto4 != null ){
-            System.out.print(this.producto4.nombre+"\t");
-            System.out.println(this.producto4.precioVenta);
-            subtotal += producto4.precioVenta;
-        }
+        
         DecimalFormat formato = new DecimalFormat();
         formato.setMaximumFractionDigits(2);
         formato.setMinimumFractionDigits(2);
         System.out.println("Subtotal: "+formato.format(subtotal));
         System.out.println("ISV 15%: "+formato.format(subtotal*0.15f));
-        System.out.println("Total: "+formato.format(subtotal*1.15f));
-        
+        System.out.println("Total: "+formato.format(subtotal*1.15f));   
+    }
+    //devolver la coleccion de productos
+    public Producto[] getProductos(){
+        return this.productos;
     }
 }
