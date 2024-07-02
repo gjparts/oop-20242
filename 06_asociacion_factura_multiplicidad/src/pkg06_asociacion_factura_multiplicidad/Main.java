@@ -40,12 +40,10 @@ public class Main {
         //acceder a determinado elemento de una coleccion dentro de una clase
         System.out.println("El tercer producto de f1 es "+f1.getProductos()[2].nombre);
         
-        /*
-        //hacer private una coleccion no protege a sus elementos hijos
+        /*//hacer private una coleccion no protege a sus elementos hijos
         Producto arr2[] = f1.getProductos();
         arr2[0] = null;
-        f1.imprimir();
-        */
+        f1.imprimir();*/
     }
     
 }
