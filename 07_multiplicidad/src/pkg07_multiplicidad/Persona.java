@@ -28,7 +28,7 @@ public class Persona {
             System.out.println("\tAvenida: "+this.direccion.avenida);
             System.out.println("\tBloque: "+this.direccion.bloque);
             System.out.println("\tCasa: "+this.direccion.casa);
-            System.out.println("\tCodigo Postal"+this.direccion.getColonia().codigoPostal);
+            System.out.println("\tCodigo Postal: "+this.direccion.getColonia().codigoPostal);
         }
         //la empresa donde labora puede venir null
         if( this.empresaLabora != null ){
@@ -42,6 +42,18 @@ public class Persona {
             System.out.println("\t\tBloque: "+this.empresaLabora.getDireccion().bloque);
             System.out.println("\t\tCasa: "+this.empresaLabora.getDireccion().casa);
             System.out.println("\t\tCodigo Postal"+this.empresaLabora.getDireccion().getColonia().codigoPostal);
+        }
+        //imprimir el array de mascotas
+        if( this.mascotas != null ){
+            System.out.println("Mascotas: ");
+            //recorrer el array
+            for( int i = 0; i < this.mascotas.length; i++ ){
+                //leer cada mascota siempre y cuando no sea null
+                if( this.mascotas[i] != null ){
+                    System.out.println("\t* Nombre: "+this.mascotas[i].nombre);
+                    System.out.println("\t  Especie: "+this.mascotas[i].especie);
+                }
+            }
         }
     }
 }

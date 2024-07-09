@@ -15,7 +15,24 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Barrio carmen = new Barrio("El Carmen","Este","21101");
+        
+        Direccion dir1 = new Direccion(carmen);
+        dir1.calle = "Principal";
+        Direccion dir2 = new Direccion(carmen);
+        dir2.calle = "Por el centro de Salud";
+        dir2.avenida = "2";
+        
+        Persona per1 = new Persona("1401198201055", "Gerardo Portillo", 77777777);
+        per1.direccion = dir1;
+        per1.empresaLabora = new Empresa("2G", dir2, 77777777);
+        
+        Mascota m1 = new Mascota("Firulais", "Perro");
+        Mascota m2 = new Mascota("Mandarino", "Gato");
+        Mascota arr1[] = {m1, null, m2, new Mascota("Paquito", "Loro")};
+        per1.mascotas = arr1;
+        
+        per1.imprimir();
     }
     
 }
