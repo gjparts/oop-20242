@@ -36,7 +36,22 @@ public class Main {
         per1.diplomas.push( new Diploma("INFOP", "Reparacion de maquinas de coser") );
         per1.diplomas.push(di1);
         
+        Persona per2 = new Persona("1401200900017", "Viena Portillo", 11111111);
+        Persona per3 = new Persona("1401201200364", "Josue Portillo", 0);
+        Persona per4 = new Persona("1401198300031", "Allyson Erazo", 12341234);
+        
+        per1.hijos.add(per2);
+        per1.hijos.add(null);
+        per1.hijos.add(per3);
+        per1.conyuge = per4;
+        
+        //opcional: si Usted quiere puede asociar al conyuge los hijos y la otra persona
+        per4.conyuge = per1;
+        per4.hijos.add(per2);
+        per4.hijos.add(per3);
+        
         per1.imprimir();
+        per4.imprimir();
     }
     
 }

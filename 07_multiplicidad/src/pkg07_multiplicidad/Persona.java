@@ -8,7 +8,10 @@ public class Persona {
     public Direccion direccion;
     public Empresa empresaLabora;
     public Mascota[] mascotas;
+    public Persona conyuge; //referencia circular
     public LinkedList<Diploma> diplomas; //lista vinculada que solo acepta objetos de clase Diploma
+    public LinkedList<Persona> hijos; //cuando una clase se asocia a si misma a esto se le conoce
+                                      //como referencia circular
     
     //aqui faltan atributos
     //constructor
@@ -18,6 +21,7 @@ public class Persona {
         this.telefono = telefono;
         //inicializar las colecciones que son LinkedList
         this.diplomas = new LinkedList();
+        this.hijos = new LinkedList();
     }
     //metodos
     public void imprimir(){
@@ -69,6 +73,21 @@ public class Persona {
                 if( this.diplomas.get(i) != null ){
                     System.out.println("\t* Institucion: "+this.diplomas.get(i).institucion);
                     System.out.println("\t  Nombre: "+this.diplomas.get(i).nombre);
+                }
+            }
+        }
+        //imprimir conyuge siempre y cuando sea diferente de null
+        if( this.conyuge != null ){
+            System.out.println("Conyuge: "+this.conyuge.nombre+", Telefono: "+this.conyuge.telefono);
+        }
+        //imprimir la coleccion de hijos
+        if( this.hijos != null ){
+            System.out.println("Hijos: ");
+            //recorrer la coleccion
+            for( int i = 0; i < this.hijos.size(); i++ ){
+                //leer cada elemento dentro del LinkedList siempre y cuando no sea null
+                if( this.hijos.get(i) != null ){
+                    System.out.println("\t*  Nombre: "+this.hijos.get(i).nombre);
                 }
             }
         }
