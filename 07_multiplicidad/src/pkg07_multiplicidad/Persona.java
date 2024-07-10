@@ -1,4 +1,5 @@
 package pkg07_multiplicidad;
+import java.util.LinkedList;
 public class Persona {
     //atributos
     public String identidad;
@@ -7,12 +8,16 @@ public class Persona {
     public Direccion direccion;
     public Empresa empresaLabora;
     public Mascota[] mascotas;
+    public LinkedList<Diploma> diplomas; //lista vinculada que solo acepta objetos de clase Diploma
+    
     //aqui faltan atributos
     //constructor
     public Persona(String identidad, String nombre, int telefono) {
         this.identidad = identidad;
         this.nombre = nombre;
         this.telefono = telefono;
+        //inicializar las colecciones que son LinkedList
+        this.diplomas = new LinkedList();
     }
     //metodos
     public void imprimir(){
@@ -52,6 +57,18 @@ public class Persona {
                 if( this.mascotas[i] != null ){
                     System.out.println("\t* Nombre: "+this.mascotas[i].nombre);
                     System.out.println("\t  Especie: "+this.mascotas[i].especie);
+                }
+            }
+        }
+        //imprimir la coleccion de diplomas
+        if( this.diplomas != null ){
+            System.out.println("Diplomas: ");
+            //recorrer la coleccion
+            for( int i = 0; i < this.diplomas.size(); i++ ){
+                //leer cada elemento dentro del LinkedList siempre y cuando no sea null
+                if( this.diplomas.get(i) != null ){
+                    System.out.println("\t* Institucion: "+this.diplomas.get(i).institucion);
+                    System.out.println("\t  Nombre: "+this.diplomas.get(i).nombre);
                 }
             }
         }

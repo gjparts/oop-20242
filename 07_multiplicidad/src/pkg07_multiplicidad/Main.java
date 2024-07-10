@@ -32,6 +32,10 @@ public class Main {
         Mascota arr1[] = {m1, null, m2, new Mascota("Paquito", "Loro")};
         per1.mascotas = arr1;
         
+        Diploma di1 = new Diploma("New Horizons","SAP R3");
+        per1.diplomas.push( new Diploma("INFOP", "Reparacion de maquinas de coser") );
+        per1.diplomas.push(di1);
+        
         per1.imprimir();
     }
     
