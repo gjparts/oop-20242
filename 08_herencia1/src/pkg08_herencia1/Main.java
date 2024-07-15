@@ -44,6 +44,14 @@ public class Main {
         System.out.println(prac1.salario);
         System.out.println(prac1.meses);
         System.out.println(prac1.cargo);
+        
+        Catedratico cat1 = new Catedratico("Gerardo", 42, 'M', "Programador", 12000);
+        cat1.saludar();
+        cat1.trabajar();
+        System.out.println(cat1.genero);
+        System.out.println(cat1.salario);
+        System.out.println(cat1.cargo);
+        
     }
     
 }
