@@ -23,6 +23,30 @@ public class Main {
         g1.imprimir();
         g1.ronronear();
         g1.hablar();
+        
+        Perro p1 = new Perro("Killer", "Doberman", 4, false);
+        p1.imprimir();
+        p1.hablar();
+        p1.jugar();
+        
+        //se puede aplicar polimorfismo en el momento de inicializar
+        //el objeto, quedando el override funcional solo para el objeto
+        //sin alterar a la clase
+        Animal a2 = new Animal("Gallina", "Gallus gallus", 2, true){
+            //Adentro de aqui estamos en la definicion de Animal
+            //para el objeto a2
+            //el polimorfismo aqui se aplicara al objeto a2
+            @Override
+            public void hablar(){
+                System.out.println("Co co co co coco");
+            }
+        };
+        a2.imprimir();
+        a2.hablar();
+        
+        Animal a3 = new Animal("Gallo","Gallus gallus", 2, true);
+        a3.imprimir();
+        a3.hablar();
     }
     
 }

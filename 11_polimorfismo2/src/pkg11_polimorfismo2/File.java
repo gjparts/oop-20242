@@ -1,4 +1,4 @@
-package pkg09_herencia2;
+package pkg11_polimorfismo2;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 public class File {
@@ -11,6 +11,7 @@ public class File {
     //constructores
     public File(String name, long size, String type,
                 String extension, Calendar creationDate) {
+        
         if( type.trim().length() == 0 )
             throw new IllegalArgumentException("File: type cannot be empty.");
         else
