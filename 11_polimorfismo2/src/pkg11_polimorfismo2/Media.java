@@ -16,4 +16,14 @@ public class Media extends File {
         this.author = author;
         this.duration = duration;
     }
+    //metodos
+    @Override
+    public void print() {
+        //parcial
+        super.print();
+        //nuevas instrucciones
+        if( this.author != null ) System.out.println("Author: "+this.author.name);
+        System.out.println("Duration: "+this.duration+" seconds");
+    }
+    
 }

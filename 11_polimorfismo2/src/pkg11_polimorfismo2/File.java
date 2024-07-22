@@ -31,7 +31,7 @@ public class File {
         System.out.println("Name: "+this.name);
         System.out.println("Size (bytes): "+this.size);
         System.out.println("Type: "+this.type);
-        System.out.println("EXtension: "+this.extension);
+        System.out.println("Extension: "+this.extension);
         if( this.creationDate != null ){
             SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd");
             System.out.println("Creation date: "+f.format(this.creationDate.getTime()));

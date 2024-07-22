@@ -11,5 +11,12 @@ public class Main {
         Author au1 = new Author("Gerardo", "", "gerardo.portillo@unah.edu.hn");
         Document d1 = new Document(au1, Calendar.getInstance(), 2, "leeme", 4, "txt", f1);
         d1.print();
+        
+        Media me1 = new Media(null, 5, "abanico", 256456, "gif", f1);
+        me1.print();
+        
+        Audio aud1 = new Audio("Medadeth", "Youthanasia", 1994, 4, null,
+                240, "A Tout le monde", 3456334, "mp3", null);
+        aud1.print();
     }    
 }

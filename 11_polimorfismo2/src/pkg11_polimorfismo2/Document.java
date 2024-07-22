@@ -1,4 +1,5 @@
 package pkg11_polimorfismo2;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 public class Document extends File {
     //atributos
@@ -18,5 +19,20 @@ public class Document extends File {
         this.author = author;
         this.modificationDate = modificationDate;
         this.words = words;
+    }
+    //metodos
+    @Override
+    public void print() {
+        //Override parcial
+        super.print();
+        //añadir mas funcionalidad
+        if( this.author != null ) System.out.println("Author: "+this.author.name);
+        System.out.println("Words: "+this.words);
+        
+        if( this.modificationDate != null ){
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+            System.out.println("Modification Date: "+formato.format(this.modificationDate.getTime()));
+        }
+        
     }
 }
