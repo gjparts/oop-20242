@@ -1,5 +1,6 @@
 package pkg11_polimorfismo2;
 import java.util.Calendar;
+import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) {
         Calendar f1 = Calendar.getInstance();
@@ -18,5 +19,19 @@ public class Main {
         Audio aud1 = new Audio("Medadeth", "Youthanasia", 1994, 4, null,
                 240, "A Tout le monde", 3456334, "mp3", null);
         aud1.print();
+        
+        String pistas[] = {"Español","Ingles",null,"Polaco"};
+        
+        Subtitle st1 = new Subtitle("English", au1);
+        
+        //creamos un LinkedList de objetos Subtitle
+        LinkedList<Subtitle> subtitulos = new LinkedList();
+        subtitulos.push(st1);
+        subtitulos.push(null);
+        subtitulos.push(new Subtitle("Español", null));
+        
+        Video vi1 = new Video("Matroska Video", 15, pistas, subtitulos,
+                au1, 135, "Deadpool 3", 4560123561L, "mkv", f1);
+        vi1.print();
     }    
 }
