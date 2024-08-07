@@ -30,3 +30,9 @@ GO
 --vaciar una tabla (eliminar sus registros, sin borrarla)
 TRUNCATE TABLE Producto
 GO
+
+--alterar una columna existente en una tabla
+ALTER TABLE Producto
+ALTER COLUMN Nombre VARCHAR(255) NOT NULL
+GO
+
