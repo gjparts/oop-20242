@@ -36,3 +36,14 @@ ALTER TABLE Producto
 ALTER COLUMN Nombre VARCHAR(255) NOT NULL
 GO
 
+--agregar una columna a la tabla
+ALTER Table Producto
+ADD Disponible BIT NULL
+
+--alterar una columna para que NO ACEPTE NULL
+ALTER TABLE Producto
+ALTER COLUMN Disponible BIT NOT NULL
+
+--alterar una columna para que SI ACEPTE NULL
+ALTER TABLE Producto
+ALTER COLUMN Disponible BIT NULL
